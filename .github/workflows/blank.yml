@@ -3,12 +3,12 @@
 name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
+# events but only for the master branch
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,15 +19,31 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+    - name: LaTeX compilation
+      uses: dante-ev/latex-action@v0.2.0
+      with:
+        # The root LaTeX file to be compiled
+        root_file: ./main.tex
+        # The working directory for the latex compiler to be invoked
+        # working_directory: # optional
+        # LaTeX engine to be used
+        #compiler: xelatex # optional, default is latexmk
+        # Extra arguments to be passed to the latex compiler
+        args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+        # optional, default is -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+        # Install extra packages by apt-get
+        # extra_system_packages: # optional
+    - name: Renaming File
+      run: mv main.pdf CV_AdrianLowenstein_EN.pdf
+    - name: Push
+      uses: github-actions-x/commit@v2.6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        push-branch: 'master'
+        commit-message: 'Update PDF'
+        force-add: 'true'
+        files: CV_AdrianLowenstein_FR.pdf
+        name: Adrian Löwenstein
+        email: adrian.loewenstein@icloud.com 
