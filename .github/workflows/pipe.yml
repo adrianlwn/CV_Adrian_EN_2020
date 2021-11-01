@@ -24,16 +24,8 @@ jobs:
     - name: LaTeX compilation
       uses: dante-ev/latex-action@latest
       with:
-        # The root LaTeX file to be compiled
         root_file: ./main.tex
-        # LaTeX engine to be used
-        compiler: latexmk
-        # optional, default is latexmk
-        # Extra arguments to be passed to the latex compiler
-        args: -interaction=nonstopmode -shell-escape
-        # optional, default is -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
-        # Install extra packages by apt-get
-        # extra_system_packages: # optional
+        args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
     - name: Renaming File
       run: mv main.pdf CV_AdrianLowenstein_EN.pdf
     - name: Push
