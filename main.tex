@@ -1,7 +1,7 @@
 \documentclass{article}
 % Package Imports
 
-\usepackage[a4paper, hmargin=2cm, vmargin=2cm]{geometry}
+\usepackage[a4paper, hmargin=2cm, vmargin=1.5cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage[UKenglish]{babel}
@@ -54,6 +54,13 @@
 \newcommand{\experience}[1]{\color{darkgray}\normalfont \textbf{#1\\}}
 \newcommand{\experiencedescript}[1]{\color{subheadings}\normalfont\small {#1\\[3pt]}}
 
+\newcommand{\personaldescription}[1]{
+\begin{center}
+        \headingfont\color{primary}\normalfont {#1\\[3pt]}
+\end{center}
+
+}
+
 
 % Location command
 \newcommand{\location}[1]{\color{primary}\headingfont {\hfill #1\\} }
@@ -86,11 +93,8 @@
 \begin{document}
 %%%%%%%%%%%%%%%%%%%% NAME %%%%%%%%%%%%%%%%%%%% 
 
-\namesection{Adrian}{Löwenstein}{\href{https://www.adrianlwn.com}{\faGlobe{} adrianlwn.com} | \href{https://github.com/adrianlwn}{\faGithubSquare{}  github}  | \href{https://www.linkedin.com/in/adrianloewenstein}{\faLinkedinSquare{}  linkedin} \\ \href{mailto:adrian.loewenstein@icloud.com}{\faEnvelope{} adrian.loewenstein@icloud.com} |  \href{tel:+33767885257}{\faPhoneSquare{} +33 7 67 88 52 57}  \\ French Nationality | Born 21.11.1993}
+\namesection{Adrian}{Löwenstein}{\href{https://www.adrianlwn.com}{\faGlobe{} adrianlwn.com} | \href{https://github.com/adrianlwn}{\faGithubSquare{}  github}  | \href{https://www.linkedin.com/in/adrianloewenstein}{\faLinkedinSquare{}  linkedin} \\ \href{mailto:adrian.loewenstein@icloud.com}{\faEnvelope{} adrian.loewenstein@icloud.com} |  \href{tel:+33767885257}{\faPhoneSquare{} +33 7 67 88 52 57}  \\ French Nationality | Born 21.11.1993 \\[6pt] Machine Learning Engineer with diversified "hands-on" project experience.\\ High-level graduate education background in international environment.\\ Keen to join dynamic and open-minded teams in startup or growth company, \\ focusing on impact-generating innovation.}
 %{``On ne voit bien qu'avec le cœur. L'essentiel est invisible pour les yeux.''}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%% EXPERIENCE %%%%%%%%%%%%%%%%%%%%% 
 \section{Professional Experience}
@@ -98,15 +102,15 @@
 \location{Paris, France | Sept 2019 - Today}
 \longdescript{Selection of assignments:}
 \experience{Data Engineer \pipe Sporting Goods Retailer}
-\experiencedescript{Integration with multiple teams on client's side - a world leading Sporting Goods Retailer - as a Data Engineer. Implementation of Ingestion and Transformation Pipelines in the \textbf{Spark} with the \textbf{Scala} API. Orchestration with Airflow and execution on AWS EMR clusters. Testing and building in CI/CD. Development of an automatic \textbf{Airflow} DAG generation tool, deployed on \textbf{AWS Lambda} with the Serverless Framework. Extensive development of \textbf{GitHub Actions} and \textbf{Jenkins} CI/CD pipelines. Co-responsible in the organisation of the customer dedicated service center (task management, on-boarding, technical training). }
+\experiencedescript{Data Engineer integrating with multiple teams on client's side, a world leading Sporting Goods Retailer. Co-responsible in the organisation of the customer dedicated service center (task management, on-boarding, technical training). Implementation of Ingestion and Transformation Pipelines in \textbf{Spark} with the \textbf{Scala} API. Orchestration with Airflow and execution on AWS EMR clusters. Testing and building in CI/CD. Development of an automatic \textbf{Airflow} DAG generation tool, deployed on \textbf{AWS Lambda} with the Serverless Framework. Extensive development of \textbf{GitHub Actions} and \textbf{Jenkins} CI/CD pipelines.}
 \experience{Machine Learning Engineer \pipe Web App \& Time Series Modeling}
-\experiencedescript{Developing for a wholesaler of complex technical goods, of a tailored solution in supply management and optimisation, including a sales prediction module on tens of thousands of items, and a supply optimisation module. Packaging of the models and development of a web application. Co-responsible of the development of the back-end in Python \textbf{Flask} and contributed of the front-end in Typescript \textbf{Angular}. Responsible for the deployment in \textbf{Docker} in an on premise environment using \textbf{Gitlab} CI/CD.}
+\experiencedescript{Developing for a distributor of complex technical goods, a tailored-made solution in supply management and optimisation, including a sales prediction module on tens of thousands of items, and a supply optimisation module. Packaging of the models and development of a web application. Co-responsible of the development of the back-end in Python \textbf{Flask} and contributing to the front-end in Typescript \textbf{Angular}. Responsible for the deployment in \textbf{Docker} in an on-premise environment using \textbf{Gitlab} CI/CD.}
 \experience{Data Engineer \pipe French Ministry of Health }
-\experiencedescript{Member of the Covid-19 Taskforce at the French Ministry of Health. In charge of developing the required pipelines for the internal Covid-19 Data platform. Including \textbf{Gitlab} CI/CD pipelines, \textbf{Docker} runners, SFTP servers. Realisation allowed to optain, structure, analyse and prepare decisions in the emerging Covid-19 crisis environment at the highest level. On pro-bono basis.}
+\experiencedescript{Member of the Covid-19 Taskforce at the French Ministry of Health. In charge of developing the required pipelines for the internal Covid-19 Data platform. Including \textbf{Gitlab} CI/CD pipelines, \textbf{Docker} runners, SFTP servers. Realisation allowed to collect, structure and analyse data to prepare decisions in the emerging Covid-19 crisis environment at the highest level. On pro-bono basis.}
 \experience{Data Scientist \pipe Medical News Company }
-\experiencedescript{Developing, for a medical news company, of tools enabling the profiling and clustering of doctors by using NLP techniques and dimension reduction on the content of the media.}
+\experiencedescript{Developing, for a medical news company, of tools enabling the profiling and clustering of doctors by using Natural Language Processing techniques and dimension reduction on the content of the media.}
 \experience{Data Scientist \pipe Computer Vision}
-\experiencedescript{Developing, for a fashion startup, image segmentation models by using Computer Vision techniques (Open CV) and Deep Learning with Pytorch. Deployed as \textbf{Django} APIs on Google Cloud Platform.}
+\experiencedescript{Developing, for a fashion startup, of image segmentation models by using Computer Vision techniques (Open CV) and Deep Learning with Pytorch. Deployed as \textbf{Django} APIs on Google Cloud Platform.}
 \experience{Data Scientist \pipe Natural Language Processing}
 \experiencedescript{Creation of supporting material, practical exercises for training on latest NLP subjects (BERT, Embdedings,  ...). \textbf{Training} given internally and externally to a data scientist audience. Co-responsibility of the NLP trainings organisation.}
 \sectionsep
@@ -118,7 +122,7 @@
 %Electrotechnics I | Pr. Oliver Martin | Autumn 2015 \& 2016 \\
 %Microcontrollers | Pr. Alexandre Schmidt | Spring 2015
 %}
-\longdescript{Working as a Teaching Assistant during five semesters, in Electronics, Micro-controllers and Electrical Machines courses. Consisting in group and individual support and knowledge transfer}
+\longdescript{Working as a Teaching Assistant during five semesters, in Electronics, Micro-controllers and Electrical Machines courses. Consisting in group and individual support and knowledge transfer.}
 \sectionsep
 \subsection{Commissariat à L’Energie Atomique | CEA}
 \location{Le Bourget du Lac, France | June 2016 - Aug 2016}
@@ -136,7 +140,7 @@
 \section{Education}
 \subsection{Imperial College London}
 \location{London, United Kingdom | Sept. 2019 }
-\longdescript{MSc in Computing | \textbf{Machine Learning} | obtained with Merit }
+\longdescript{MSc in Computing | \textbf{Machine Learning} | obtained with "Merit" }
 \sectionsep
 \subsection{Ecole Polytechnique Fédérale de Lausanne | EPFL }
 \location{Lausanne, Switzerland | July 2018}
@@ -200,16 +204,16 @@
 \sectionsep
 
 
-%%%%%%%%%%%%%%%%%%%% SOFT SKILLS %%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%% SOFT SKILLS %%%%%%%%%%%%%%%%%%%%
 \section{Soft Skills}
 \subsection{Qualities}
-\longdescript{Team Spirit \mybullet{} Curiosity \& Creativity\mybullet{} Adaptability\mybullet{}  Reasoning \mybullet{} Analysis     }
+\longdescript{Team Spirit \mybullet{} Engagement \mybullet{} Curiosity \& Creativity\mybullet{} Adaptability \mybullet{}  Analysis     }
 \sectionsep
 \subsection{Language}
 \longdescript{French [Native] \mybullet{} English [Full Proficiency Level] \mybullet{} German [Good Conversation Level, "Father Tongue"]}
 \sectionsep
 
-%%%%%%%%%%%%%%%%%%%%% EXTRA CURICULAR %%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%% EXTRA CURICULAR %%%%%%%%%%%%%%%%%%%%%
 \section{Extra Curicular}
 \subsection{Associative}
 \descript{}
@@ -219,7 +223,7 @@
 \descript{}
 \longdescript{Photography [Digital, Analog, Laboratory] \mybullet{}  Video Creation and Editing [Final Cut Pro X]  \\ 
 Bike Touring \mybullet{} Hiking \mybullet{} Skiing \\
-Discovery Travelling [Peru China Iran]
+Discovery Travelling [so far Peru, China, Iran]
 } 
 \sectionsep
 
