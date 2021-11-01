@@ -1,7 +1,7 @@
 \documentclass{article}
 % Package Imports
 
-\usepackage[a4paper, hmargin=1cm, vmargin=1.5cm]{geometry}
+\usepackage[a4paper, hmargin=2cm, vmargin=2cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage[UKenglish]{babel}
@@ -15,9 +15,9 @@
 
 
 % Color definitions
-\definecolor{darkgray}{HTML}{555555} 
+\definecolor{darkgray}{HTML}{A83E20} 
 \definecolor{primary}{HTML}{000000} 
-\definecolor{headings}{HTML}{6A6A6A}
+\definecolor{headings}{HTML}{A83E20}
 \definecolor{subheadings}{HTML}{555555}
 
 % Set main fonts
@@ -49,7 +49,11 @@
 % Description COmmand 
 \newcommand{\descript}[1]{\color{darkgray}\normalfont \textbf{#1\\}}
 
-\newcommand{\longdescript}[1]{\color{subheadings}\normalfont\small {#1\\} }
+\newcommand{\longdescript}[1]{\color{subheadings}\normalfont\small {#1\\}}
+
+\newcommand{\experience}[1]{\color{darkgray}\normalfont \textbf{#1\\}}
+\newcommand{\experiencedescript}[1]{\color{subheadings}\normalfont\small {#1\\[3pt]}}
+
 
 % Location command
 \newcommand{\location}[1]{\color{primary}\headingfont {\hfill #1\\} }
@@ -62,7 +66,7 @@
 % Name command
 \newcommand{\namesection}[4]{
 	\begin{center}
-		\sffamily
+		\sffamily \color{headings}
 		\headingfont\fontsize{35pt}{14pt}\selectfont\scshape #1 
 			\headingfont\selectfont\scshape\bfseries #2
 	\end{center}
@@ -75,6 +79,7 @@
 	}
 
 \newcommand{\mybullet}[1]{ \hspace{2pt}\textbullet{#1}\hspace{2pt} }
+\newcommand{\pipe}{\hspace{1pt} | \hspace{1pt} }
 %%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%
 
@@ -87,47 +92,33 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%% TECHNICAL SKILLS %%%%%%%%%%%%%%%%%%%% 
-
-\section{Technical Skills}
-
-\subsection{Certification} 
-\longdescript{Azure Data Engineer Associate [DP-200 + DP-201]
-}
-\sectionsep
-
-\subsection{Programming}
-\longdescript{Python [Pytorch, Keras, Pandas, Spark, Scikit-Learn, Matplotlib, ... ] \mybullet{} C \mybullet{} C++ \mybullet{} Matlab \mybullet{} SQL\mybullet{} Linux [bash] \\ \hspace*{3pt} Devops Practices [Git, Gitlab CI/CD]  \mybullet{} Javascript [D3.js]   }
-\sectionsep
-
-\subsection{Computer Science} 
-\longdescript{ Classical Machine Learning \mybullet{} Deep Learning \mybullet{} Natural Language Processing [Transformers, Spacy]  \\ \hspace*{3pt} Time Series \mybullet{} Computer Vision \mybullet{} Reinforcement Learning  \mybullet{} Probabilistic Inference [Gaussian Processes, Bayesian Opt. , VAE ]   } 
-\sectionsep
-
-\subsection{Electrical Engineering}
-\longdescript{ \mybullet{} Model Predictive Control \mybullet{} Control Theory \mybullet{} Computational Optimisation \\  \hspace*{3pt}  Electrical Grid Control \& Modelling \mybullet{} Electricity Market \mybullet{} Energy Storage \mybullet{} Energy Generation}
-\sectionsep
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%% EXPERIENCE %%%%%%%%%%%%%%%%%%%%% 
 \section{Professional Experience}
-
 \subsection{Quantmetry}
 \location{Paris, France | Sept 2019 - Today}
-\descript{Data Scientist}
-\longdescript{Working as a Data Scientist consultant for various projects and companies. Developing solutions and interacting extensively with clients.  \\ \textbf{NLP} : Developing, for a medical news company, tools enabling the profiling and clustering of doctors by using NLP techniques and dimension reduction on the content of the media. \\ \textbf{NLP} : Creation of supporting material, practical exercises for a formation on latest NLP subjects (BERT, Embdedings, , ...). Formation given externally to a data scientist audience. \\ \textbf{Time Series ans Supply Chain} : Developing and deploying for a wholesaler, of a tailored solution in supply. Including a sales prediction module on thousands of items, and a supply optimisation module. Using Deep Learning approaches and constrained optimisation methods.\\ \textbf{Data Engineering} : Developing infrastructures for the French Ministry of Health in support of the internal Covid-19 Data platform. Including Gitlab CI/CD pipelines, Docker runners, SFTP servers. \\ \textbf{Computer Vision} : Developing, for a fashion startup, image segmentation models by using Computer Vision techniques and Deep Learning on Pytorch. Deployed with Django APIs on Google Cloud Platform. } 
+\longdescript{Selection of assignments:}
+\experience{Data Engineer \pipe Sporting Goods Retailer}
+\experiencedescript{Integration with multiple teams on client's side - a world leading Sporting Goods Retailer - as a Data Engineer. Implementation of Ingestion and Transformation Pipelines in the \textbf{Spark} with the \textbf{Scala} API. Orchestration with Airflow and execution on AWS EMR clusters. Testing and building in CI/CD. Development of an automatic \textbf{Airflow} DAG generation tool, deployed on \textbf{AWS Lambda} with the Serverless Framework. Extensive development of \textbf{GitHub Actions} and \textbf{Jenkins} CI/CD pipelines. Co-responsible in the organisation of the customer dedicated service center (task management, on-boarding, technical training). }
+\experience{Machine Learning Engineer \pipe Web App \& Time Series Modeling}
+\experiencedescript{Developing for a wholesaler of complex technical goods, of a tailored solution in supply management and optimisation, including a sales prediction module on tens of thousands of items, and a supply optimisation module. Packaging of the models and development of a web application. Co-responsible of the development of the back-end in Python \textbf{Flask} and contributed of the front-end in Typescript \textbf{Angular}. Responsible for the deployment in \textbf{Docker} in an on premise environment using \textbf{Gitlab} CI/CD.}
+\experience{Data Engineer \pipe French Ministry of Health }
+\experiencedescript{Member of the Covid-19 Taskforce at the French Ministry of Health. In charge of developing the required pipelines for the internal Covid-19 Data platform. Including \textbf{Gitlab} CI/CD pipelines, \textbf{Docker} runners, SFTP servers. Realisation allowed to optain, structure, analyse and prepare decisions in the emerging Covid-19 crisis environment at the highest level. On pro-bono basis.}
+\experience{Data Scientist \pipe Medical News Company }
+\experiencedescript{Developing, for a medical news company, of tools enabling the profiling and clustering of doctors by using NLP techniques and dimension reduction on the content of the media.}
+\experience{Data Scientist \pipe Computer Vision}
+\experiencedescript{Developing, for a fashion startup, image segmentation models by using Computer Vision techniques (Open CV) and Deep Learning with Pytorch. Deployed as \textbf{Django} APIs on Google Cloud Platform.}
+\experience{Data Scientist \pipe Natural Language Processing}
+\experiencedescript{Creation of supporting material, practical exercises for training on latest NLP subjects (BERT, Embdedings,  ...). \textbf{Training} given internally and externally to a data scientist audience. Co-responsibility of the NLP trainings organisation.}
 \sectionsep
 
 \subsection{Ecole Polytechnique Fédérale de Lausanne | EPFL}
 \location{Lausannne, Switzerland | 2015 - 2018}
-\descript{Teaching Assistant }
+\descript{Teaching Assistant}
 %\longdescript{Electrical Systems and Electronics I | Dr. Adil Koukab | Spring 2017 \& 2018\\
 %Electrotechnics I | Pr. Oliver Martin | Autumn 2015 \& 2016 \\
 %Microcontrollers | Pr. Alexandre Schmidt | Spring 2015
 %}
-\longdescript{Working as a Teacher Assistant for several Professors during my studies at EPFL}
+\longdescript{Working as a Teaching Assistant during five semesters, in Electronics, Micro-controllers and Electrical Machines courses. Consisting in group and individual support and knowledge transfer}
 \sectionsep
 \subsection{Commissariat à L’Energie Atomique | CEA}
 \location{Le Bourget du Lac, France | June 2016 - Aug 2016}
@@ -135,11 +126,11 @@
 \longdescript{Internship at \textit{Institut National de l'Energie Solaire} (INES) - Development and validation of energy management strategies in Smart Grids. Study of battery models and implementation in a battery simulator. Evaluation on a Solar Microgrid of battery charging strategies.}
 \sectionsep
 
-\subsection{Airbus Helicopters UK }
-\location{Oxford, United Kingdom |  June 2011 – July 2011}
-\descript{Internship}
-\longdescript{Introductory Internship done between the French Baccalaureate and the beginning of my studies.}
-\sectionsep
+%\subsection{Airbus Helicopters UK }
+%\location{Oxford, United Kingdom |  June 2011 – July 2011}
+%\descript{Internship}
+%\longdescript{Introductory Internship done between the French Baccalaureate and the beginning of my studies.}
+%\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%% 
 \section{Education}
@@ -172,85 +163,65 @@
 %\descript{High-school | French Baccalaureate  - Highest Honors}
 %\sectionsep
 
+\newpage
+%%%%%%%%%%%%%%%%%%%% TECHNICAL SKILLS %%%%%%%%%%%%%%%%%%%% 
+\section{Technical Skills}
+
+\subsection{Data Science} 
+\longdescript{Classical Machine Learning \mybullet{} Deep Learning \mybullet{} Natural Language Processing [Transformers, Spacy] \mybullet{} Time Series \mybullet{} Computer Vision \mybullet{} Reinforcement Learning \mybullet{} Probabilistic Inference [Gaussian Processes, Bayesian Opt., VAE]} 
+\sectionsep
+
+\subsection{Computer Science}
+\longdescript{Python [Pyspark, Pytorch, Keras, Pandas, Spark, Scikit-Learn, Matplotlib, ...] \mybullet{} Scala [Spark, Maven] \mybullet{} C/C++  \mybullet{} SQL [Oracle, Redshift, Postgres] \mybullet{} Linux [bash, zsh] \mybullet{} DevOps Tools [GitHub, Jenkins, Gitlab CI] \mybullet{} Git \mybullet{} Javascript [D3.js, Angular]  \mybullet{} Airflow (AWS MWAA) \mybullet{} AWS Lambda (Serverless Framework) \mybullet{} AWS EMR } 
+\sectionsep
+
+\subsection{Certification} 
+\longdescript{Azure Data Engineer Associate [DP-200 + DP-201]}
+\sectionsep
+
+%\subsection{Electrical Engineering}
+%\longdescript{ \mybullet{} Model Predictive Control \mybullet{} Control Theory \mybullet{} Computational Optimisation \\  \hspace*{3pt}  Electrical Grid Control \& Modelling \mybullet{} Electricity Market \mybullet{} Energy Storage Systems \mybullet{} Energy Generation}
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%% MASTER THESIS %%%%%%%%%%%%%%%%%%%%% 
+\section{Master Thesis}
+
+\subsection{Gaussian Processes for Optimal Sensor Position}
+\location{Imperial College, London | Summer 2019}
+\descript{Master Thesis}
+\longdescript{Employment of a \textbf{Gaussian Process} model to calculate the optimal spatial positioning of sensors to study and collect air pollution data in big cities. Validation with Data Assimilation. Imperial College London \textbf{Data Science Institute}. 
+}
+\sectionsep
+
+\subsection{Provision of Multiple Services to the Grid with PEV}
+\location{EPFL, Lausanne | Spring 2018}
+\descript{Master Thesis |  \href{https://stisrv13.epfl.ch/masterposter/960.pdf}{\faBook{} Poster of the Project} }
+\longdescript{Provision of Multiple Services to the Grid with Plug-In-Electrical-Vehicles. Using Electrical Vehicles for providing services to the grid, such as Frequency Regulation. Optimisation problem using real transportation data to determine the regulation capacity for the electricity markets. Using Matlab, Gurobi solver and YALMIP. Supervised by Pr. C. Jones.}
+\sectionsep
+
+
 %%%%%%%%%%%%%%%%%%%% SOFT SKILLS %%%%%%%%%%%%%%%%%%%% 
 \section{Soft Skills}
 \subsection{Qualities}
-\longdescript{Reasoning \mybullet{} Analysis \mybullet{} Adaptability \mybullet{} Curiosity \mybullet{} Creativity \mybullet{} Team Spirit }
+\longdescript{Team Spirit \mybullet{} Curiosity \& Creativity\mybullet{} Adaptability\mybullet{}  Reasoning \mybullet{} Analysis     }
 \sectionsep
 \subsection{Language}
-\longdescript{French [Native] \mybullet{} English [C1] \mybullet{} German [B2] }
+\longdescript{French [Native] \mybullet{} English [Full Proficiency Level] \mybullet{} German [Good Conversation Level, "Father Tongue"]}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%% EXTRA CURICULAR %%%%%%%%%%%%%%%%%%%%% 
 \section{Extra Curicular}
 \subsection{Associative}
-\longdescript{EPFL Electrical Engineering Students Association \mybullet{} EPFL Instagram Student Photographer [@epflstudents] }
+\descript{}
+\longdescript{EPFL Electrical Engineering Students Association \\ EPFL Instagram Student Photographer [@epflstudents] }
 \sectionsep
-\subsection{Others}
-\longdescript{Photography [Digital, Analog] \mybullet{}  Video Editing \mybullet{} Travel Biking \mybullet{} Hiking \mybullet{} Skiing \mybullet{} Discovery Travelling [Peru, China, Iran]} 
+\subsection{Interests \& Hobbies}
+\descript{}
+\longdescript{Photography [Digital, Analog, Laboratory] \mybullet{}  Video Creation and Editing [Final Cut Pro X]  \\ 
+Bike Touring \mybullet{} Hiking \mybullet{} Skiing \\
+Discovery Travelling [Peru China Iran]
+} 
 \sectionsep
-
-
-%%%%%%%%%%%%%%%%%%%%% PROJECTS  %%%%%%%%%%%%%%%%%%%%% 
-
-\section{Data Science Projects}
-
-\subsection{Gaussian Processes for Optimal Sensor Position}
-\location{Imperial College, London | Summer 2019}
-\descript{Master Thesis}
-\longdescript{Employment of a \textbf{Gaussian Process} model to calculate the optimal spatial positioning of sensors to study and collect air pollution data in big cities. Validation with Data Assimilation. Big Data Problem. Imperial College London \textbf{Data Science Institute}. 
-}
-\sectionsep
-
-
-
-\subsection{NLP Challenge - SemEval 2019 Task 6}
-\location{Imperial College, London | Spring 2019}
-\descript{Codalab Competition | \href{https://github.com/adrianlwn/SemEval-2019-Task-6}{\faGithubSquare{} Github Repository}}
-\longdescript{Classification of Offensive Tweets. Globally \textbf{obtained the 5th best results}. Use of state of the art methods such as GRU, LSTM, RNN or CNN. }
-\sectionsep
-
-\subsection{Tweet Awareness - Data Analysis}
-\location{EPFL, Lausanne | Autumn 2017}
-\descript{Group Project | \href{https://tweet-awareness.eu}{\faGlobe{} Data Story}}
-\longdescript{Data Analysis Project on how to measure the \textbf{awareness} of people about dramatic events around the world and how to correlate it to \textbf{cultural distances}. Data \textbf{extraction} from twitter using Python (Selenium, BeautifulSoup). Data \textbf{analysis} using Python (Pandas, Sklearn). Data \textbf{visualisation} using Javascript (D3.js).
-Group Project created in the context of the Applied Data Analysis course of Pr. R. West.}
-\sectionsep
-
-%\subsection{Speech Recognition Challenge - Network Data Science}
-%\location{EPFL, Lausanne | Autumn 2017}
-%\descript{Kaggle Competition |  %\href{https://github.com/adrianlwn/NTDS-Speech-Recognition-Challenge
-%}{\faGithubSquare{} Github Repository}}
-%\longdescript{Network Tour of Data Science Project. Classifying noisy audio commands. Cleaning and cutting of Audio Signals. Feature Extraction using mel-cepstral cepstrum. Building of a graph and extraction the fiedler vectors from the Laplacian to cluster the graph and classify the audio signals.  }
-%\sectionsep
-
-\section{Smart Grid Projects}
-
-\subsection{Provision of Multiple Services to the Grid with Plug-In-Electrical-Vehicles}
-\location{EPFL, Lausanne | Spring 2018}
-\descript{Master Thesis |  \href{https://stisrv13.epfl.ch/masterposter/960.pdf}{\faBook{} Poster of the Project} }
-\longdescript{Using Electrical Vehicles for providing services to the grid, such as Frequency Regulation. Optimisation problem using real transportation data to determine the regulation capacity for the electricity markets. Using Matlab, Gurobi solver and YALMIP. Supervised by Pr. C. Jones.}
-\sectionsep
-
-\subsection{Robust restoration in DG-incorporated distribution networks}
-\location{EPFL, Lausanne | Autumn 2017}
-\descript{MSc Semester Project }
-\longdescript{Formulation and implementation of the \textbf{Restoration Problem} in Electrical Grid, a Mixed-Integer-Non-Linear Optimisation Problem. Implementation using Matlab and the Gurobi solver. Supervised by Dr. R. Cherkaoui.}
-\sectionsep
-
-\subsection{ETR applied to Fault Detection in Power Networks}
-\location{EPFL, Lausanne | Spring 2017}
-\descript{MSc Semester Project | \href{https://infoscience.epfl.ch/record/256592?ln=en}{\faBook{} Conference Paper}}
-\longdescript{Investigating the physical application of the Electromagnetic Time Reversal (ETR) principle, in the context of fault detection in \textbf{Electrical Grids}.  Supervised by Pr. F. Rachidi.  Three weeks residency spend at \textbf{Amir-Kabir University in Tehran} for this project. }
-\sectionsep
-
-\subsection{H2O2 Fuel Cell and Electrolyser Analysis and Monitoring}
-\location{EPFL, Lausanne | Spring 2016 }
-\descript{BSc Project | \href{https://desl-pwrs.epfl.ch}{\faGlobe{} EPFL Microgrid}}
-\longdescript{Implementation of a \textbf{Monitoring System} (in LabView) for a Fuel Cell and Electrolyser in the context of a Lab Microgrid. Supervised by Pr. M. Paolone.}
-\sectionsep
-
-
 
 
 \end{document}
